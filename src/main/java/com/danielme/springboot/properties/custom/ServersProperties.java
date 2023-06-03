@@ -1,4 +1,4 @@
-package com.danielme.springboot;
+package com.danielme.springboot.properties.custom;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

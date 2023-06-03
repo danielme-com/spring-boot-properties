@@ -1,5 +1,7 @@
-package com.danielme.springboot;
+package com.danielme.springboot.properties;
 
+import com.danielme.springboot.properties.custom.CustomProperties;
+import com.danielme.springboot.properties.custom.ServersProperties;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
