@@ -1,6 +1,7 @@
 package com.danielme.springboot.properties;
 
 import com.danielme.springboot.properties.custom.CustomProperties;
+import com.danielme.springboot.properties.custom.CustomPropertiesAsRecord;
 import com.danielme.springboot.properties.custom.ServersProperties;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,9 @@ class CustomPropertiesTests {
     @Autowired
     private ServersProperties serversProperties;
 
+    @Autowired
+    private CustomPropertiesAsRecord customPropertiesRecord;
+
     @Test
     void testSongFromValue() {
         assertEquals(SONG_NAME, song);
@@ -40,8 +44,13 @@ class CustomPropertiesTests {
     }
 
     @Test
-    void testConfigurationPropertiesClass() {
+    void testCustomPropertiesClass() {
         assertEquals(SONG_NAME, customProperties.getSong());
+    }
+
+    @Test
+    void testCustomPropertiesRecord() {
+        assertEquals(SONG_NAME, customPropertiesRecord.song());
     }
 
     @Test
