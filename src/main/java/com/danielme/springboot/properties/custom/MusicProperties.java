@@ -6,8 +6,8 @@ import org.springframework.validation.annotation.Validated;
 import jakarta.validation.constraints.NotBlank;
 
 @Validated
-@ConfigurationProperties("custom")
-public class CustomProperties {
+@ConfigurationProperties("music")
+public class MusicProperties {
 
     @NotBlank
     private String song;

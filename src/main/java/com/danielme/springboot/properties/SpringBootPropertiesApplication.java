@@ -6,8 +6,8 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
-@PropertySource("classpath:custom.properties")
-//@EnableConfigurationProperties({CustomProperties.class})
+@PropertySource("classpath:music.properties")
+//@EnableConfigurationProperties({MusicProperties.class})
 @ConfigurationPropertiesScan
 public class SpringBootPropertiesApplication {
 

@@ -1,7 +1,7 @@
 package com.danielme.springboot.properties;
 
-import com.danielme.springboot.properties.custom.CustomProperties;
-import com.danielme.springboot.properties.custom.CustomPropertiesAsRecord;
+import com.danielme.springboot.properties.custom.MusicProperties;
+import com.danielme.springboot.properties.custom.MusicPropertiesAsRecord;
 import com.danielme.springboot.properties.custom.ServersProperties;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,22 +14,21 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 class CustomPropertiesTests {
 
-    private static final String SONG_NAME = "ride like the wind";
-
-    @Value("${song}")
+    private static final String SONG_NAME = "Ride Like the Wind";
+    @Value("${music.song}")
     private String song;
 
     @Autowired
     private Environment environment;
 
     @Autowired
-    private CustomProperties customProperties;
+    private MusicProperties musicProperties;
 
     @Autowired
     private ServersProperties serversProperties;
 
     @Autowired
-    private CustomPropertiesAsRecord customPropertiesRecord;
+    private MusicPropertiesAsRecord musicPropertiesRecord;
 
     @Test
     void testSongFromValue() {
@@ -38,19 +37,19 @@ class CustomPropertiesTests {
 
     @Test
     void testSongFromEnvironment() {
-        String song = environment.getProperty("song");
+        String song = environment.getProperty("music.song");
 
         assertEquals(SONG_NAME, song);
     }
 
     @Test
-    void testCustomPropertiesClass() {
-        assertEquals(SONG_NAME, customProperties.getSong());
+    void testMusicPropertiesClass() {
+        assertEquals(SONG_NAME, musicProperties.getSong());
     }
 
     @Test
-    void testCustomPropertiesRecord() {
-        assertEquals(SONG_NAME, customPropertiesRecord.song());
+    void testMusicPropertiesRecord() {
+        assertEquals(SONG_NAME, musicPropertiesRecord.song());
     }
 
     @Test
