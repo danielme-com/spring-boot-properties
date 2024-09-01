@@ -7,6 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
 @PropertySource("classpath:music.properties")
+@PropertySource("classpath:serverHierarchy.properties")
 //@EnableConfigurationProperties({MusicProperties.class})
 @ConfigurationPropertiesScan
 public class SpringBootPropertiesApplication {

@@ -2,6 +2,7 @@ package com.danielme.springboot.properties;
 
 import com.danielme.springboot.properties.custom.MusicProperties;
 import com.danielme.springboot.properties.custom.MusicPropertiesAsRecord;
+import com.danielme.springboot.properties.custom.ServerConfiguration;
 import com.danielme.springboot.properties.custom.ServersProperties;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ class CustomPropertiesTests {
 
     @Autowired
     private ServersProperties serversProperties;
+
+    @Autowired
+    ServerConfiguration serverConfiguration;
 
     @Autowired
     private MusicPropertiesAsRecord musicPropertiesRecord;
@@ -56,6 +60,11 @@ class CustomPropertiesTests {
     void testServerPropertiesClass() {
         assertEquals("email_server", serversProperties.getEmail());
         assertEquals("ftp_server", serversProperties.getFtp());
+    }
+
+    @Test
+    void testServerSecurityToken() {
+        assertEquals("<UNDEFINED>", serverConfiguration.security().token());
     }
 
 }
